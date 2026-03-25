@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var player = get_parent().get_node("player")
+
 var speed = 5
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,5 +24,4 @@ func _process(_delta: float) -> void:
 	if (Input.is_action_pressed("ui_down") ):
 		move += Vector2(0,+1)
 	
-	position += move.normalized()*speed
-	global_position = position
+	player.position += move.normalized()*speed
