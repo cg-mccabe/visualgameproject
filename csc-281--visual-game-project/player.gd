@@ -7,7 +7,7 @@ var speed = 5
 func _ready() -> void:
 	pass # Replace with function body.
 
-
+#test
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	var move = Vector2.ZERO
