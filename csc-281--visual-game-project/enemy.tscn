@@ -19,7 +19,7 @@ script = ExtResource("1_7k104")
 position = Vector2(231, 289)
 texture = ExtResource("2_4gyqm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy" unique_id=636916363]
+[node name="enemy_hitbox" type="CollisionShape2D" parent="enemy" unique_id=636916363]
 position = Vector2(228.5, 285)
 shape = SubResource("RectangleShape2D_7k104")
 
@@ -30,6 +30,6 @@ script = ExtResource("3_qi2p4")
 position = Vector2(-1, 1)
 texture = ExtResource("2_4gyqm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1037461459]
-position = Vector2(184, 134)
+[node name="player_hitbox" type="CollisionShape2D" parent="player" unique_id=1037461459]
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_iifgy")
