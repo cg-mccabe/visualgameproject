@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://diw5ohq5ukrfy"]
+
+[ext_resource type="PackedScene" uid="uid://1f33jo5p2xxm" path="res://scenes/entities/Player.tscn" id="1_nksj5"]
+[ext_resource type="PackedScene" uid="uid://ce7a8l1aw13vh" path="res://scenes/entities/enemies/EnemyA.tscn" id="3_356sj"]
+[ext_resource type="PackedScene" uid="uid://fww8nx2pvc73" path="res://scenes/ui/HUD.tscn" id="3_ly3lj"]
+[ext_resource type="Script" uid="uid://cmexy282t2hsv" path="res://scripts/world/Spawner.cs" id="3_vqxnd"]
+[ext_resource type="PackedScene" uid="uid://7mva2v8qtnm2" path="res://scenes/entities/enemies/EnemyB.tscn" id="4_msyow"]
+[ext_resource type="Texture2D" uid="uid://cnktumtsutbal" path="res://assets/sprites/Neighborhood Background draft 2.png" id="6_msyow"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vqxnd"]
+vertices = PackedVector2Array(1102.9766, -34.007813, 1102.0078, 598, -33, 598.9922, -33, -35.976563)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-43, -46, -43, 609, 1112, 608, 1113, -44)])
+
+[node name="Level" type="Node2D" unique_id=765604]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1707424173]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1752980935]
+position = Vector2(-8, -4)
+navigation_polygon = SubResource("NavigationPolygon_vqxnd")
+
+[node name="Player" parent="." unique_id=1776114871 instance=ExtResource("1_nksj5")]
+position = Vector2(150, 217)
+
+[node name="Spawner" type="Node2D" parent="." unique_id=1760117897 node_paths=PackedStringArray("EnemyContainer")]
+process_mode = 3
+script = ExtResource("3_vqxnd")
+EnemyAScene = ExtResource("3_356sj")
+EnemyBScene = ExtResource("4_msyow")
+EnemyContainer = NodePath("../Enemies")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1036925543]
+
+[node name="Enemies" type="Node2D" parent="." unique_id=614687873]
+
+[node name="Hud" parent="." unique_id=440236349 instance=ExtResource("3_ly3lj")]
+position = Vector2(334, 222)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1854825340]
+z_index = -4096
+position = Vector2(529, 271)
+scale = Vector2(14.3625, 8.95)
+texture = ExtResource("6_msyow")
