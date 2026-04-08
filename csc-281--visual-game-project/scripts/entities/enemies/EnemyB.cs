@@ -8,8 +8,7 @@ public partial class EnemyB : EnemyBase
 {
 	[Export] public float KnockbackResistance { get; set; } = 0.5f;
  
-	private Sprite2D _sprite;
-	private Color _originalColor;
+	private AnimatedSprite2D _sprite;
  
 	public override void _Ready()
 	{
@@ -18,11 +17,9 @@ public partial class EnemyB : EnemyBase
 		Damage = 25f;
 		base._Ready();
  
-		_sprite = GetNode<Sprite2D>("Sprite2D");
-		_originalColor = _sprite.Modulate;
+		_sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		_sprite.Play("Walking");
  
-		// Tint the sprite to visually distinguish EnemyB
-		_sprite.Modulate = new Color(1f, 0.4f, 0.4f); // Red tint
 	}
  
 	protected override void OnDamaged(float amount)
@@ -34,6 +31,7 @@ public partial class EnemyB : EnemyBase
  
 	protected override void OnDeath()
 	{
+		_sprite.Play("Dying");
 		GD.Print("EnemyB died — award more points here");
 		base.OnDeath();
 	}

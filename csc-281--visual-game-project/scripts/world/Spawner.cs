@@ -8,10 +8,7 @@ public partial class Spawner : Node2D
 {
 	[Export] public PackedScene EnemyAScene { get; set; }
 	[Export] public PackedScene EnemyBScene { get; set; }
-
-	/// <summary>Drag the "Enemies" Node2D from the scene tree into this slot.</summary>
 	[Export] public Node2D EnemyContainer { get; set; }
-
 	[Export] public float SpawnInterval { get; set; } = 2.5f;
 	[Export] public float SpawnMargin { get; set; } = 32f;
 

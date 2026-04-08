@@ -10,7 +10,7 @@ public partial class EnemyA : EnemyBase
 	// EnemyA is fast and weak — good for swarming the player.
 	[Export] public float FlashDuration { get; set; } = 0.1f;
  
-	private Sprite2D _sprite;
+	private AnimatedSprite2D _sprite;
 	private bool _isFlashing = false;
  
 	public override void _Ready()
@@ -20,17 +20,22 @@ public partial class EnemyA : EnemyBase
 		Damage = 5f;
 		base._Ready();
  
-		_sprite = GetNode<Sprite2D>("Sprite2D");
+		_sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		_sprite.Play("Walking");
 	}
  
 	protected override void OnDamaged(float amount)
 	{
+		_sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		_sprite.Play("Getting Hit");
 		if (!_isFlashing)
 			FlashWhite();
 	}
  
 	protected override void OnDeath()
 	{
+		_sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		_sprite.Play("Dying");
 		// Emit a signal or call GameManager here to award score
 		GD.Print("EnemyA died — award points here");
 		base.OnDeath();
