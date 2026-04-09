@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://cddj3fjs3b3je"]
+
+[ext_resource type="Texture2D" uid="uid://cmiwysawt4ekk" path="res://assets/sprites/girl_withbat-Sheet.png" id="1_n4sgg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqgpm"]
+atlas = ExtResource("1_n4sgg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrqkr"]
+atlas = ExtResource("1_n4sgg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0pfg"]
+atlas = ExtResource("1_n4sgg")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26stg"]
+atlas = ExtResource("1_n4sgg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnt5h"]
+atlas = ExtResource("1_n4sgg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmref"]
+atlas = ExtResource("1_n4sgg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ulud"]
+atlas = ExtResource("1_n4sgg")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4allj"]
+atlas = ExtResource("1_n4sgg")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k63f0"]
+atlas = ExtResource("1_n4sgg")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1ata"]
+atlas = ExtResource("1_n4sgg")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s15d"]
+atlas = ExtResource("1_n4sgg")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2a3cc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqgpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrqkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0pfg")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26stg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnt5h")
+}],
+"loop": false,
+"name": &"getting hit",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmref")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ulud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4allj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k63f0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1ata")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6s15d")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=2102582170]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=332249798]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_2a3cc")
+animation = &"attack"
