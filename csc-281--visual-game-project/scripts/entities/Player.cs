@@ -16,8 +16,8 @@ public partial class Player : CharacterBody2D
 	private float _currentHealth;
 	private bool _isDead = false;
 	private bool _isInvincible = false;
-	private bool _hasBat;
-	private bool _hasGloves;
+	private bool _hasBat = false;
+	private bool _hasGloves = false;
 	
  
 	// Iframes after taking damage
