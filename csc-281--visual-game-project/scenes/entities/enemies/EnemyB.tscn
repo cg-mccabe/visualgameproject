@@ -125,9 +125,14 @@ animations = [{
 "speed": 11.0
 }]
 
+; Contact shape — slightly smaller than body capsule
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_contact"]
+radius = 8.0
+height = 16.0
+
 [node name="Enemy" unique_id=209762169 instance=ExtResource("1_op6bp")]
 script = ExtResource("2_r4und")
-KnockbackResistance = 0.5
+KnockbackResistance = 0.6
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=650779295]
 texture_filter = 1
@@ -136,3 +141,12 @@ animation = &"Attack"
 
 [node name="Sprite2D" parent="." index="1" unique_id=212930110]
 visible = false
+
+; ── Contact damage hitbox ─────────────────────────────────────────────────────
+; collision_mask = 1  → scans layer 1 (Player body layer)
+[node name="ContactHitbox" type="Area2D" parent="." unique_id=9003000001]
+collision_layer = 0
+collision_mask = 1
+
+[node name="ContactShape" type="CollisionShape2D" parent="ContactHitbox" unique_id=9003000002]
+shape = SubResource("CapsuleShape2D_contact")

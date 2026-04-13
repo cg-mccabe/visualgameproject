@@ -203,6 +203,9 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2m2ha"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_melee"]
+size = Vector2(24, 16)
+
 [node name="Player" type="CharacterBody2D" unique_id=1776114871]
 script = ExtResource("1_g13of")
 
@@ -222,3 +225,11 @@ shape = SubResource("CapsuleShape2D_2m2ha")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1425195648]
 zoom = Vector2(1.5, 1.5)
+
+[node name="MeleeHitbox" type="Area2D" parent="." unique_id=411065409]
+collision_layer = 0
+collision_mask = 2
+
+[node name="HitboxShape" type="CollisionShape2D" parent="MeleeHitbox" unique_id=411065410]
+shape = SubResource("RectangleShape2D_melee")
+disabled = true
