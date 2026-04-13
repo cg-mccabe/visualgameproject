@@ -78,6 +78,7 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D" unique_id=716279498]
+texture_filter = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=344313666]
 sprite_frames = SubResource("SpriteFrames_q8joh")
