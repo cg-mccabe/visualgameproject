@@ -9,9 +9,9 @@
 [ext_resource type="AudioStream" uid="uid://dqtpvud6fy606" path="res://assets/audio/Menu_Music.mp3" id="7_3v4r2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vqxnd"]
-vertices = PackedVector2Array(1208.0938, 13.9296875, 1216.8984, 939.78125, 12.9375, 915.1875, 8.046875, 6.0625)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-2, -4, 3, 925, 1227, 950, 1218, 4)])
+vertices = PackedVector2Array(163.27344, 2053.1016, -1561.8281, 2071.8828, -1528.1563, 19.976563, 194.28125, 967.15625, 1296.25, 17.007813, 1320.7266, 948.1719)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1538, 10, -1572, 2082, 173, 2063, 204, 977, 1331, 958, 1306, 7)])
 
 [node name="Level" type="Node2D" unique_id=765604]
 
@@ -39,10 +39,23 @@ position = Vector2(334, 222)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1854825340]
 z_index = -4096
-position = Vector2(619, 473.99997)
-scale = Vector2(1.5350001, 1.18125)
+position = Vector2(670.49994, 482.375)
+scale = Vector2(1.6087497, 1.2015624)
+texture = ExtResource("6_msyow")
+
+[node name="Background" type="Sprite2D" parent="Background" unique_id=2031839644]
+z_index = -4096
+position = Vector2(-884.6906, 5.079397)
+scale = Vector2(1.2349267, 0.9885088)
+texture = ExtResource("6_msyow")
+
+[node name="Background2" type="Sprite2D" parent="Background" unique_id=837108638]
+z_index = -4096
+position = Vector2(-860.3077, 855.6414)
+scale = Vector2(1.4121157, 1.1841334)
 texture = ExtResource("6_msyow")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=714545711]
 stream = ExtResource("7_3v4r2")
 autoplay = true
+max_distance = 9999.0
