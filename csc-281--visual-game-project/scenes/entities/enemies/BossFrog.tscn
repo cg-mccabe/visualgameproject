@@ -103,7 +103,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"licking",
-"speed": 8.0
+"speed": 17.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -130,4 +130,4 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1279434326]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_r3g6m")
-animation = &"trash attack"
+animation = &"talking"
